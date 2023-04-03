@@ -33,7 +33,7 @@ body {
 
 
 .hero-image {
-  background-image: url("dogs.jpg");
+  background-image: url("/images/dogs.jpg");
   height: 550px;
   background-position: center;
   background-repeat: no-repeat;
@@ -41,7 +41,7 @@ body {
 }
 
 .grooming-image {
-  background-image: url("grooming.jpg");
+  background-image: url("/images/grooming.jpg");
   height: 850px;
   background-position: center;
   background-repeat: no-repeat;

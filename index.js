@@ -1,33 +1,30 @@
-// Imports
 const express = require('express');
-
-//const path = require('path');
-const logger = require('pino');
-
-// Express app variable
+const path = require('path');
 const app = express();
 
-// Set views
-app.set("views", path.join(__dirname, "views"));
+// Set Views
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Use ejs as the view engine
-app.set("view engine", "ejs");
-
-// Set static files, folder: public, has images and stylesheets
-app.use(express.static(path.join(__dirname, "public")));
-app.use("/images", express.static(path.join(__dirname, "public/images")));
-app.use("/site", express.static(path.join(__dirname, "public/stylesheets")));
-
-// Holds server port value
 const PORT = process.env.PORT || 3000;
 
-// Calling Landing Page
+// View to the Landing page
 app.get('/', (req, res) => {
     res.render('index', {
-        title: 'Home',
-        message: 'Welcome to the Home Page!'
+        title: 'Pets-R-Us: Home Page',
+        message: 'Pets-R-Us: Home Page'
     })
 });
 
-//Listens on port 3000
-app.listen(port, () => console.info(`Listening on port ${port}`));
+// View to the Grooming page
+  app.get('/grooming', (req, res) => {
+    res.render('grooming', {
+        title: 'Pets-R-Us: Grooming',
+        message: 'Pets-R-Us: Grooming'
+    })
+});
+
+app.listen(PORT, () => {
+    console.log('Application started and listening on PORT ' + PORT);
+});
