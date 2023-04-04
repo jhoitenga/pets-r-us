@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
     res.render('index', {
         title: 'Pets-R-Us: Home Page',
         message: 'Pets-R-Us: Home Page'
-    })
+    });
 });
 
 // View to the Grooming page
@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
     res.render('grooming', {
         title: 'Pets-R-Us: Grooming',
         message: 'Pets-R-Us: Grooming'
-    })
+    });
 });
 
 app.listen(PORT, () => {
