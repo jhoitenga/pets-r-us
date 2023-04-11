@@ -25,36 +25,11 @@
     <title>Pets-R-Us: Grooming</title>
 </head>
 <body>
+    <!-- Calling the navigation bar -->
+    <%- include('./partials/_navbar.ejs') %>
 
-    <header>
-        <nav>
-            <div class="grooming-image">
-                <div class="container">
-                  <div class="topnav">
-                    <a href="/">Home</a>
-                    <div class="dropdown">
-                        <button class="dropbtn">Services
-                            <i class="fa fa-caret-down"></i>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="#">Boarding</a>
-                            <a href="#">Grooming</a>
-                            <a href="#">Training</a>
-                        </div>
-                    </div>
-                    <a href="">Customers</a>
-                    <a href="">Booking</a>
-                    <a href="">My Appointments</a>
-                  </div>
-                  <div>
-                    <p class="logo1"></p>
-                    <p class="logo2"></p>
-                    <p class="logo3"></p>
-                </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <!-- Calling the header -->
+    <%- include('./partials/_header.ejs') %>
 
     <br>
     <hr>
@@ -88,10 +63,8 @@
         <p class="motto">There is no limit to what we will do for pets because we know that pets will do anything for us too!</p>
     </div>
 
+   <!-- Calling the footer -->
+   <%- include('./partials/_footer.ejs') %>
 
-
-    <footer>
-        Images provided by https://unsplash.com/
-    </footer>
 </body>
 </html>
