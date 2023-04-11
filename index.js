@@ -25,6 +25,14 @@ app.get('/', (req, res) => {
     });
 });
 
+// View to the Boarding page
+app.get('/boarding', (req, res) => {
+    res.render('boarding', {
+        title: 'Pets-R-Us: Boarding',
+        message: 'Pets-R-Us: Boarding'
+    });
+});
+
 app.listen(PORT, () => {
     console.log('Application started and listening on PORT ' + PORT);
 });
