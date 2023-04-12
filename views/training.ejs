@@ -1,0 +1,76 @@
+<!-- 
+======================================
+; Title: Assignment 5.2 Pets-R-Us
+; Author: Professor Kumar
+; Date: April 11, 2023
+; Modified By: Jennifer Hoitenga
+; Description: Creating a website for Pets-R-Us
+; Sources Used: 
+; Bellevue University Web Dev GitHub: https://github.com/buwebdev/web-340/tree/master/week-4
+; Node.js Setup using Express, HTML, CSS, JS & EJS: https://www.youtube.com/watch?v=A01KtJTv1oc
+;=====================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="styles/site.css" type="text/css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Pets-R-Us: Training</title>
+</head>
+<body>
+    <!-- Calling the navigation bar -->
+    <%- include('./partials/_navbar.ejs') %>
+
+    <!-- Calling the header -->
+    <%- include('./partials/_header.ejs') %>
+    
+    <br>
+    <hr>
+    <br>
+    <div>
+        <h3>Training</h3>
+        <p>Our training services are designed to forge a healthy bond between you and your dog. Our premier dog training services offer variety, flexibility, and can cater to your dog’s specific needs. Our goal is to help you and your dog establish clear communication and enjoy working together. We believe training is a life-long process and should be both fun and challenging.</p>
+        <p>The training we offer is based on scientifically proven methodology and aligns with the American Veterinary Medical Association (AVMA), the American Society for Prevention of Cruelty to Animals (ASPCA®), the Certification Council for Professional Dog Trainers (CCPDT), the International Association of Animal Behavior Consultants (IAABC), and other established animal welfare organizations.</p>
+        <p>Regardless of age or experience, all dogs can benefit from learning. Whether your dog is starting out with the basics, you want to brush up on previously learned skills, or you’re ready to up the challenge with your dog, our training services can accommodate your needs.</p>>
+        
+        <h4>WHY DOG TRAINING IS SO IMPORTANT</h4>
+        <p>There are many benefits of training for both you and your dog.<ul>
+            <li> Strengthens the dog/owner bond</li>
+            <li> Promotes obedience & control</li>
+            <li> Engages the canine mind & relieves boredom</li>
+            <li> Corrects undesirable behaviors</li>
+            <li> Builds self-confidence in your dog like leash-pulling, destructive chewing, and more</li>
+            <li> Promotes the socialization skills well-behaved pets need</li>
+            <li> Reduces fear & separation anxiety</li>
+            <li> Helps provide the proper amount of mental & physical stimulation dogs need</li></ul></p>
+
+            <br>
+            <hr>
+            <br>
+            <div class="price-card">
+                <h4>Our Price List</h4>
+                <ul>
+                    <li> Puppy Socialization: $25 (1 hour group session)</li>
+                    <li> Basic Puppy Training: $150 (6 week class)</li>
+                    <li> Beginner Training: $170 (6 week class)</li>
+                    <li> Intermediate Training: $200 (8 week class)</li>
+                    <li> Advanced Training: $300 (8 week class)</li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <p class="motto">There is no limit to what we will do for pets because we know that pets will do anything for us too!</p>
+        </div>
+        
+        <!-- Calling the footer -->
+        <%- include('./partials/_footer.ejs') %>
+    
+    </body>
+    </html>

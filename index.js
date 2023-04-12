@@ -33,6 +33,14 @@ app.get('/boarding', (req, res) => {
     });
 });
 
+// View to the Training page
+app.get('/training', (req, res) => {
+    res.render('training', {
+        title: 'Pets-R-Us: Training',
+        message: 'Pets-R-Us: Training'
+    });
+});
+
 app.listen(PORT, () => {
     console.log('Application started and listening on PORT ' + PORT);
 });
