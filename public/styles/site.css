@@ -316,3 +316,19 @@
 .train-image {
   margin-left: 605px;
 }
+
+.boarding {
+  width: 55%;
+  float: left;
+  } 
+
+.boarding-space {
+  margin-bottom: 340px;
+}
+
+.boarding-image {
+  width: 45%;
+  float: right;
+  padding: 10px;
+  margin-top: 45px;
+  } 
