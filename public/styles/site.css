@@ -306,6 +306,7 @@
   font-size: 12px;
   font-weight: 300;
   text-decoration: none;
+  text-align: center;
   }
 
 .train {
@@ -338,4 +339,8 @@
     font-size: 20px;
     margin-left: 30px;
     margin-right: 30px;
+  }
+
+  img {
+    border-radius: 8px;
   }
