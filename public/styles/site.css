@@ -332,3 +332,10 @@
   padding: 10px;
   margin-top: 45px;
   } 
+
+  table {
+    width: 100%;
+    font-size: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
