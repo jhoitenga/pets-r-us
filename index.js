@@ -43,6 +43,14 @@ app.get('/training', (req, res) => {
     });
 });
 
+// View to the Registration page
+app.get('/registration', (req, res) => {
+    res.render('registration', {
+        title: 'Pets-R-Us: Registration',
+        message: 'Pets-R-Us: Registration'
+    });
+});
+
 app.listen(PORT, () => {
     console.log('Application started and listening on PORT ' + PORT);
 });
