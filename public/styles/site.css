@@ -413,3 +413,18 @@
     z-index: 1;
     position: relative;
   }
+
+.btnCancel {
+    float:right;
+    width: 20%;
+    background-color: #95b9c9;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    }
