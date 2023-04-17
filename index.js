@@ -9,7 +9,17 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Connecting to Mongo
+const CONN = 'mongodb+srv://jahoitenga:s3cret1@bellevueuniversity.g473hiy.mongodb.net/web340DB';
+
 const PORT = process.env.PORT || 3000;
+
+// Showing Server Connection Messages
+mongoose.connect(CONN).then(() => {
+    console.log('Connection to MongoDB database was successful');
+}).catch(err => {
+    console.log('MongoDB Error: ' + err.message);
+})
 
 // View to the Landing page
 app.get('/', (req, res) => {
@@ -53,4 +63,5 @@ app.get('/registration', (req, res) => {
 
 app.listen(PORT, () => {
     console.log('Application started and listening on PORT ' + PORT);
+    console.log('\n  Press Ctrl+C to stop the server...')
 });
