@@ -22,8 +22,18 @@
         </div>
             <br>
         <div style="text-align: center;">
-            <button class="register-button" role="button"><span class="text">SIGN UP FOR A FREE ACCOUNT</span></button>
+            <button class="register-button" id="btnRegister" role="button"><span class="text">SIGN UP FOR A FREE ACCOUNT</span></button>
         </div>
 
     </div>
 </header>
+
+<body>
+    <script>
+    // Routing to Registration page when button clicked
+    document.getElementById("btnRegister").onclick = function() {myFunction()};
+    function myFunction() {
+        window.location = "/registration"
+    }
+    </script>
+</body>
