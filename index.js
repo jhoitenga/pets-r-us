@@ -64,10 +64,9 @@ app.get('/registration', (req, res) => {
 // Post to the Registration
 app.post('/customers', (req, res, next) => {
     console.log(req.body);
-    console.log(req.body.customerId);
     const newCustomer = new Customer({
-      customerId: req.body.customerId,
-      email: req.body.email,
+        customerId: req.body.customerId,
+        email: req.body.email
     });
   
     console.log(newCustomer);
