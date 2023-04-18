@@ -4,10 +4,13 @@ const app = express();
 const mongoose = require('mongoose');
 const Customer = require('./models/customer');
 
+
 // Set Views
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const PORT = process.env.PORT || 3000;
 
@@ -62,25 +65,31 @@ app.get('/registration', (req, res) => {
 }); 
 
 // Post to the Registration
-app.post('/customers', (req, res, next) => {
+app.post('/customers', async (req, res, next) => {
     console.log(req.body);
     const newCustomer = new Customer({
         customerId: req.body.customerId,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        streetAddress: req.body.streetAddress,
+        city: req.body.city,
+        state: req.body.state,
+        zipCode: req.body.zipCode,
         email: req.body.email
     });
   
     console.log(newCustomer);
   
-    Customer.create(newCustomer, function(err, customer) {
-        if (err) {
+    // If successful, route to Home page otherwise show error
+    const customer = await Customer.create(newCustomer);
+    if (customer) {
+        res.render('index', {
+            title: 'Pets-R-Us'
+        });
+        } else {
             console.log(err);
             next(err);
-        } else {
-            res.render('index', {
-                title: 'Pets-R-Us'
-            });
-        }
-    });
+    }
   });
 
 

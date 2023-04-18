@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// Creating a new mongoose model named Customer with properties for customerId and email
+// Creating a new mongoose model named Customer
 let customerSchema = new Schema({
     customerId: { type: String, required: true, unique: true },
     firstName: { type: String, required: true },
