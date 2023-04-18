@@ -9,17 +9,17 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
+const PORT = process.env.PORT || 3000;
+
 // Connecting to Mongo
 const CONN = 'mongodb+srv://jahoitenga:s3cret1@bellevueuniversity.g473hiy.mongodb.net/web340DB';
-
-const PORT = process.env.PORT || 3000;
 
 // Showing Server Connection Messages
 mongoose.connect(CONN).then(() => {
     console.log('Connection to MongoDB database was successful');
 }).catch(err => {
     console.log('MongoDB Error: ' + err.message);
-})
+});
 
 // View to the Landing page
 app.get('/', (req, res) => {
@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 });
 
 // View to the Grooming page
-  app.get('/grooming', (req, res) => {
+app.get('/grooming', (req, res) => {
     res.render('grooming', {
         title: 'Pets-R-Us: Grooming',
         message: 'Pets-R-Us: Grooming'
@@ -59,9 +59,33 @@ app.get('/registration', (req, res) => {
         title: 'Pets-R-Us: Registration',
         message: 'Pets-R-Us: Registration'
     });
-});
+}); 
+
+// Post to the Registration
+app.post('/customers', (req, res, next) => {
+    console.log(req.body);
+    console.log(req.body.customerId);
+    const newCustomer = new Customer({
+      customerId: req.body.customerId,
+      email: req.body.email,
+    });
+  
+    console.log(newCustomer);
+  
+    Customer.create(newCustomer, function(err, customer) {
+        if (err) {
+            console.log(err);
+            next(err);
+        } else {
+            res.render('index', {
+                title: 'Pets-R-Us'
+            });
+        }
+    });
+  });
+
+
 
 app.listen(PORT, () => {
     console.log('Application started and listening on PORT ' + PORT);
-    console.log('\n  Press Ctrl+C to stop the server...')
 });
