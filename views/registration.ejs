@@ -22,53 +22,62 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>Pets-R-Us: Boarding</title>
+    <title>Pets-R-Us: Registration</title>
 </head>
 <body>
+      <!-- Calling the navigation bar -->
+      <%- include('./partials/_navbar.ejs') %>
     <div>
-      <h3>Pets-R-Us</h3>  
       <h3>New Customer Registration</h3>
+      <br>
+      <hr> 
+      <br>
     </div>
 
     <div class="price-card">
         <p>Please fill out the required fields below to register.</p>
-        <form action="/customers" method="post">
-          <label for="customerId">Enter your Customer ID: </label>
+        <br>
+        <form action="/registrations" method="post">
+          <label for="customerId">Customer ID: </label>
           <input type="text" id="customerId" name="customerId"><br>
           <br>
-          <label for="firstName">Enter your First Name: </label>
+          <label for="firstName">First Name: </label>
           <input type="text" id="firstName" name="firstName"><br>
           <br>
-          <label for="lastName">Enter your Last Name: </label>
+          <label for="lastName">Last Name: </label>
           <input type="text" id="lastName" name="lastName"><br>
           <br>
-          <label for="streetAddress">Enter your Street Address: </label>
+          <label for="streetAddress">Street Address: </label>
           <input type="text" id="streetAddress" name="streetAddress"><br>
           <br>
-          <label for="city">Enter your City: </label>
+          <label for="city">City: </label>
           <input type="text" id="city" name="city"><br>
           <br>
-          <label for="state">Select your State:</label><br>
+          <label id="state">State:</label><br>
           <input type="radio" id="kansas" name="state" value="Kansas">
           <label for="kansas">Kansas</label><br>
           <input type="radio" id="missouri" name="state" value="Missouri">
           <label for="missouri">Missouri</label><br>
           <br>
-          <label for="zipCode">Enter your Zip Code: </label>
+          <label for="zipCode">Zip Code: </label>
           <input type="text" id="zipCode" name="zipCode"><br>
           <br>
-          <label for="email">Enter your Email Address: </label>
-          <input type="input" id="email" name="email"><br>
+          <label for="email">Email Address: </label>
+          <input type="email" id="email" name="email"><br>
+          <br>
+          <input type="checkbox" id="agree" name="agree" value="Agree">
+          <label for="agree"> By checking this box, you are agreeing to our terms of service.</label><br>
           <br>
           <input type="submit" value="REGISTER">
 
-          <a href="/" class="btnCancel">CANCEL</a>
+          <a href="/" class="btnCancel">REGISTER</a>
         
         </form>
       </div>
 <br>
 <p class="motto">There is no limit to what we will do for pets because we know that pets will do anything for us too!</p>
-        
+
+
 <!-- Calling the footer -->
 <%- include('./partials/_footer.ejs') %>
         

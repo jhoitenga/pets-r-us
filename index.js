@@ -64,8 +64,8 @@ app.get('/registration', (req, res) => {
     });
 }); 
 
-// Post to the Registration
-app.post('/customers', async (req, res, next) => {
+// HTTP Post to the Registration
+app.post('/registrations', async (req, res, next) => {
     console.log(req.body);
     const newCustomer = new Customer({
         customerId: req.body.customerId,
@@ -75,13 +75,14 @@ app.post('/customers', async (req, res, next) => {
         city: req.body.city,
         state: req.body.state,
         zipCode: req.body.zipCode,
-        email: req.body.email
+        email: req.body.email,
+        agree: req.body.agree
     });
-  
-    console.log(newCustomer);
-  
+    
     // If successful, route to Home page otherwise show error
     const customer = await Customer.create(newCustomer);
+
+    // Converted callback to Async/Await
     if (customer) {
         res.render('index', {
             title: 'Pets-R-Us'

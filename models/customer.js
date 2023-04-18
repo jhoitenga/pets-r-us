@@ -10,7 +10,8 @@ let customerSchema = new Schema({
     city: { type: String, required: true },
     state: { type: String, required: true },
     zipCode: { type: String, required: true },
-    email: { type: String, required: true, unique: true }
+    email: { type: String, required: true, unique: true },
+    agree: { type: String, required: true }
 });
 
 // Exporting the model

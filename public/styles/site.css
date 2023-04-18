@@ -38,7 +38,7 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
-  
+
   .grooming-image {
     background-image: url("/images/grooming.jpg");
     height: 850px;
@@ -261,6 +261,16 @@
     border-radius: 4px;
     box-sizing: border-box;
     }
+
+    input[type=email], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      }
   
   input[type=submit] {
   width: 30%;
