@@ -62,7 +62,23 @@ app.get('/registration', (req, res) => {
         title: 'Pets-R-Us: Registration',
         message: 'Pets-R-Us: Registration'
     });
-}); 
+});
+
+
+// HTTP GET route to display the customer list EJS page
+app.get('/customers', async (req, res, next) => {
+    try {
+        const customers = await Customer.find({});
+        res.render('customer-list', {
+            title: 'Pets-R-Us: Customer List',
+            pageTitle: 'Our Customers',
+            customers: customers
+        });
+    } catch (err) {
+        console.log(err);
+        next(err);
+    }
+});
 
 // HTTP Post to the Registration
 app.post('/registrations', async (req, res, next) => {

@@ -1,0 +1,80 @@
+<!-- 
+======================================
+; Title: Assignment 7.2 Pets-R-Us
+; Author: Professor Kumar
+; Date: April 21, 2023
+; Modified By: Jennifer Hoitenga
+; Description: Creating a website for Pets-R-Us
+; Sources Used: 
+; Bellevue University Web Dev GitHub: https://github.com/buwebdev/web-340/tree/master/week-4
+; Node.js Setup using Express, HTML, CSS, JS & EJS: https://www.youtube.com/watch?v=A01KtJTv1oc
+;=====================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="styles/site.css" type="text/css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Pets-R-Us: Customer List</title>
+</head>
+
+    <!-- Calling the navigation bar -->
+    <%- include('./partials/_navbar.ejs') %>
+
+    <!-- Calling the header -->
+    <%- include('./partials/_header.ejs') %>
+
+    <div>
+        <h3>Our Customer List</h3>
+        <br>
+        <hr> 
+        <br>
+      </div>
+  
+      <div class="customer-card">
+        <% if(customers.length > 0) { %>
+        <table class="table">
+            <tr>
+                <th>Customer ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+            </tr>
+            <tbody>
+            <!-- EJS’s forEach() function to iterate over the customer documents & display them in the customer-list.ejs page-->
+            <% customers.forEach(function(customer) { %>
+            <tr>
+                <td>
+                    <%= customer.customerId %>
+                </td>
+                <td>
+                    <%= customer.firstName %>
+                </td>
+                <td>
+                    <%= customer.lastName %>
+                </td>
+                <td>
+                    <%= customer.email %>
+                </td>
+                <td>
+                    <a href="#">DELETE</a>
+                </td>
+            </tr>
+            <% }) %>
+            </tbody>
+        </table>
+        <% } else { %>
+        <h3>Customers have not been added to the MongoDB database. Try adding some!</h3>
+        <% } %>
+    </div>
+
+
+   <!-- Calling the footer -->
+   <%- include('./partials/_footer.ejs') %>
