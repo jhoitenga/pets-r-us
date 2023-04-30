@@ -2,8 +2,9 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const mongoose = require('mongoose');
+const fs = require('fs');
 const Customer = require('./models/customer');
-
+const Appointment = require('./models/appointment');
 
 // Set Views
 app.set('views', path.join(__dirname, 'views'));
@@ -64,7 +65,6 @@ app.get('/registration', (req, res) => {
     });
 });
 
-
 // HTTP GET route to display the customer list EJS page
 app.get('/customers', async (req, res, next) => {
     try {
@@ -100,6 +100,43 @@ app.post('/registrations', async (req, res, next) => {
 
     // Converted callback to Async/Await
     if (customer) {
+        res.render('index', {
+            title: 'Pets-R-Us'
+        });
+        } else {
+            console.log(err);
+            next(err);
+    }
+  });
+
+// View to the booking page and pulls the services for the form from services.json file
+app.get('/booking', (req, res) => {
+    let jsonFile = fs.readFileSync('./public/data/services.json');
+    let services = JSON.parse(jsonFile);
+  
+    res.render('booking', {
+        title: 'Pets-R-Us: Booking',
+        message: 'Pets-R-Us: Booking',
+        services: services
+    });
+  });
+
+// HTTP Post to the Appointments
+app.post('/booking', async (req, res, next) => {
+    console.log(req.body);
+    const newAppointment = new Appointment({
+        userName: req.body.userName,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        service: req.body.service
+    });
+    
+    // If successful, route to Home page otherwise show error
+    const appointment = await Appointment.create(newAppointment);
+
+    // Converted callback to Async/Await
+    if (appointment) {
         res.render('index', {
             title: 'Pets-R-Us'
         });
