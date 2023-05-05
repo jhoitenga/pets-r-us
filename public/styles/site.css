@@ -314,8 +314,7 @@
   border: #555;
   padding: 10px;
   margin-top: 20px;
-  margin-left: 260px;
-  margin-right: 60px;
+  justify-content: center;
   }
   
   footer {
