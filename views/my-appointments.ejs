@@ -1,0 +1,86 @@
+<!-- 
+======================================
+; Title: Assignment 9.2 Pets-R-Us
+; Author: Professor Kumar
+; Date: May 5, 2023
+; Modified By: Jennifer Hoitenga
+; Description: Creating a website for Pets-R-Us
+; Sources Used: 
+; Bellevue University Web Dev GitHub: https://github.com/buwebdev/web-340/tree/master/week-4
+; Node.js Setup using Express, HTML, CSS, JS & EJS: https://www.youtube.com/watch?v=A01KtJTv1oc
+;=====================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="styles/site.css" type="text/css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Pets-R-Us: My Appointments</title>
+</head>
+<body>
+  <a id="top"></a>
+      <!-- Calling the navigation bar -->
+      <%- include('./partials/_navbar.ejs') %>
+
+      <div>
+        <h3>My Appointments</h3>
+        <br>
+        <hr> 
+        <br>
+      </div>
+  
+      <div class="appt-card">
+          <p>Please type in your email address to view your upcoming appointments:</p>
+          <br>
+          <form>
+            <label for="email">Email Address: </label>
+            <input type="email" id="email" name="email" autofocus required>
+            <br>
+            <br>
+            <div class="form-field">
+              <input type="submit" value="SEARCH" id="search">
+          </div>
+            <a href="/" class="btnCancel">CANCEL</a>
+          </form>
+
+          <div id="appointments"></div>
+          
+        </div>
+
+          <script>
+            document.getElementById('search').onclick = function() {
+              console.log('Search button clicked');
+              const email = document.getElementById('email').value;
+              console.log('Email:', email);
+              
+              fetch('/api/appointments/' + email)
+              .then(res => res.json())
+              .then(data => {
+                console.log('Fetch data:', data);
+                let tableString = `<br /><h4 style="font-size: 32px; text-align: center; padding-bottom: 10px; font-weight: lighter">My Appointments</h4><table id="orders" style="width: 100%;" class="table full-width"><tr><th>First name</th><th>Last name</th><th>Services</th></tr>`;
+                  
+                  for (let appointment of data) {
+                    tableString += `<tr><td>${appointment.firstName}</td><td>${appointment.lastName}</td><td>${appointment.service}</td></tr>`;
+                  }
+                  tableString += `</table>`;
+                  document.getElementById('appointments').innerHTML = tableString;
+                });
+                };
+          </script>
+      
+      
+          <p class="motto">There is no limit to what we will do for pets because we know that pets will do anything for us too!</p>
+
+
+<!-- Calling the footer -->
+<%- include('./partials/_footer.ejs') %>
+
+
+
