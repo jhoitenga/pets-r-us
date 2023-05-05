@@ -301,10 +301,28 @@
   .price-card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 50%;
+  width: 40%;
   border: #555;
   padding: 10px;
   margin: auto;
+  }
+
+  .book-card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 50%;
+    border: #555;
+    padding: 10px;
+    margin: auto;
+  }
+
+  .appt-card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 50%;
+    border: #555;
+    padding: 10px;
+    margin: auto;
   }
   
   footer {
@@ -329,7 +347,7 @@
 .boarding {
   width: 55%;
   float: left;
-  } 
+} 
 
 .boarding-space {
   margin-bottom: 360px;
@@ -339,7 +357,7 @@
   width: 45%;
   float: right;
   margin-top: 65px;
-  } 
+} 
 
   table {
     width: 100%;
@@ -467,17 +485,6 @@
     padding: 20px;
     text-align: left;
     }
-
-    .appt-card {
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      transition: 0.3s;
-      width: 70%;
-      border: #555;
-      margin-top: 20px;
-      margin: auto;
-      padding: 20px;
-      text-align: left;
-      }
 
 .fa-award {
   color: #e8c97a;
