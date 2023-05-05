@@ -196,9 +196,10 @@
   .float-container {
     border: 3px solid white;
     display: flex;
-    margin-left: 140px;
-    padding: 25px;
-    padding-top: 10px;
+    margin: auto;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
   }
   
   .container > div {
@@ -308,7 +309,7 @@
   
   footer {
   background-color: #9eb675;
-  padding: 10px;
+  padding: 8px;
   margin-top: 20px;
   font-size: .8vw;
   font-weight: 300;
@@ -481,4 +482,18 @@
 .fa-award {
   color: #e8c97a;
   text-shadow: 2px 2px 2px dimgray;
+  --fa-beat-fade-opacity
+}
+
+.social {
+  text-align: left;
+  font-size: 1vw;
+  padding: 20px;
+}
+
+.social a {
+  color: black;
+}
+.social a:hover {
+  color: #eee;
 }
