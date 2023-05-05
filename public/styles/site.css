@@ -489,8 +489,8 @@
       text-align: left;
       }
 
-      @media screen and (min-width: 50em) {
+      @media screen and (min-width: 75em) {
         html {
-          font-size: 2vw;
+          font-size: 1.5em;
         }
       }
