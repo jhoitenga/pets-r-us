@@ -282,8 +282,8 @@
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin: auto;
+  width: 50%;
   font-size: 1.5vw;
   }
   
@@ -362,7 +362,7 @@
     cursor: pointer;
     display: inline-block;
     text-shadow: 1px 1px  dimgray;
-    font-size: 2vw;
+    font-size: 1.6vw;
     letter-spacing: 0;
     line-height: 1em;
     margin: 0;
@@ -482,7 +482,6 @@
 .fa-award {
   color: #e8c97a;
   text-shadow: 2px 2px 2px dimgray;
-  --fa-beat-fade-opacity
 }
 
 .social {
