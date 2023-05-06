@@ -520,9 +520,16 @@
 #floated-imgs {
   float: right;
   margin-right: 145px;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 #floated-imgs img {
   display: block;
+}
+
+@media screen (max-width: 800px){
+  #body {
+    padding: 0;
+    margin: 0;
+}
 }
