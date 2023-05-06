@@ -194,7 +194,6 @@
   }
   
   .float-container {
-    border: 3px solid white;
     display: flex;
     margin: auto;
     padding: 10px;
@@ -314,6 +313,7 @@
     border: #555;
     padding: 10px;
     margin: auto;
+    font-size: 1.5vw;
   }
 
   .appt-card {
@@ -323,6 +323,7 @@
     border: #555;
     padding: 10px;
     margin: auto;
+    font-size: 1.5vw;
   }
   
   footer {
@@ -492,8 +493,8 @@
 }
 
 .social {
-  text-align: left;
-  font-size: 1vw;
+  text-align: center;
+  font-size: 2vw;
   padding: 20px;
 }
 
@@ -503,3 +504,15 @@
 .social a:hover {
   color: #eee;
 }
+
+.foot-left {
+  font-size: .8vw;
+  font-weight: 300;
+  text-align: left;
+  }
+
+  .foot-center {
+    font-size: .8vw;
+    font-weight: 300;
+    text-align: center;
+    }
