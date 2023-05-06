@@ -53,7 +53,7 @@
           <input type="email" id="email" name="email" required><br>
           <br>
           <label for="service">Choose a Service:</label>
-          <select name="service" id="service" required>
+          <select name="service" class="service" id="service" required>
             <% services.forEach((service) => { %>
             <option class="service" value="'<%= service.value %>'"><%= service.text %></option>
             <% }) %>
