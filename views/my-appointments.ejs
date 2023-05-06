@@ -64,7 +64,7 @@
 <%- include('./partials/_footer.ejs') %>
 
 <script>
-  document.getElementById('search').onclick = function() {
+  document.getElementById('search').onclick = async function() {
     console.log('Search button clicked');
     const email = document.getElementById('email').value;
     console.log('Email:', email);
