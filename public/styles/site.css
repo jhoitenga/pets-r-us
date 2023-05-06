@@ -542,16 +542,10 @@
   display: block;
 }
 
-@media screen (max-width: 800px){
-  html {
-    margin: 0;
-}
-}
-
 .service {
   font-size: 1.5vw;
 }
 
 html {
-  width: 100%;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
