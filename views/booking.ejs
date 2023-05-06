@@ -55,7 +55,7 @@
           <label for="service">Choose a Service:</label>
           <select name="service" id="service" required>
             <% services.forEach((service) => { %>
-            <option value="'<%= service.value %>'"><%= service.text %></option>
+            <option class="service" value="'<%= service.value %>'"><%= service.text %></option>
             <% }) %>
           <br>
           <input type="submit" value="BOOK NOW">
