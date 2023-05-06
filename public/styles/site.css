@@ -341,11 +341,6 @@
   float: left;
   } 
 
-.train-image {
-  margin-left: 613px;
-  width: 45%;
-}
-
 .boarding {
   width: 55%;
   float: left;
@@ -524,6 +519,8 @@
 
 #floated-imgs {
   float: right;
+  margin-right: 135px;
+  margin-top: 30px;
 }
 
 #floated-imgs img {
