@@ -343,6 +343,7 @@
 
 .train-image {
   margin-left: 613px;
+  width: 45%;
 }
 
 .boarding {
@@ -516,3 +517,15 @@
     font-weight: 300;
     text-align: center;
     }
+
+#train-container {
+  overflow: hidden;
+}
+
+#floated-imgs {
+  float: right;
+}
+
+#floated-imgs img {
+  display: block;
+}
