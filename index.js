@@ -13,6 +13,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+
 const PORT = process.env.PORT || 3000;
 
 // Connecting to Mongo
@@ -165,6 +166,12 @@ app.post('/booking', async (req, res, next) => {
             res.json(appointments);
         }
     });
+  });
+
+
+
+  app.use((req, res, next) => {
+    res.status(404).send("Sorry, page not found")
   });
   
 app.listen(PORT, () => {

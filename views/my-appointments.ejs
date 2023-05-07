@@ -64,7 +64,8 @@
         document.getElementById('search').onclick = function() {
           const email = document.getElementById('email').value;
           fetch('/api/appointments/' + email)
-                  .then(res => res.json())
+                  .then(res => res.text())
+                  //.then(text => console.log(text))
                   .then(data => {
                     let tableString = `<br><h4 style="font-size: 32px; text-align: center; padding-bottom: 10px; font-weight: lighter">My Appointments</h4><table style="width: 100%;" class="table full-width"><tr><th>First Name</th><th>Last Name</th><th>Email</th><th>Service</th></tr>`;
                     for (let appointment of data) {
