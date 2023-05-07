@@ -60,32 +60,26 @@
           <p class="motto">There is no limit to what we will do for pets because we know that pets will do anything for us too!</p>
 
 
-<!-- Calling the footer -->
-<%- include('./partials/_footer.ejs') %>
-
 <script>
-  document.getElementById('search').onclick = async function() {
-    console.log('Search button clicked');
-    const email = document.getElementById('email').value;
-    console.log('Email:', email);
-    
-    fetch('/api/appointments/' + email)
-    .then(res => res.json())
-    .then(data => {
-      console.log('Fetch data:', data);
-      let tableString = `<br><h4 style="font-size: 32px; text-align: center; padding-bottom: 10px; font-weight: lighter">My Appointments</h4><table style="width: 100%;" class="table full-width"><tr><th>First name</th><th>Last Name</th><th>Services</th></tr>`;
-        
-        for (let appointment of data) {
-          tableString += `<tr><td>${appointment.firstName}</td><td>${appointment.lastName}</td><td>${appointment.service}</td></tr>`;
+        document.getElementById('search').onclick = function() {
+          const email = document.getElementById('email').value;
+          fetch('/api/appointments/' + email)
+                  .then(res => res.text())
+                  .then(data => {
+                    let tableString = `<br><h4 style="font-size: 32px; text-align: center; padding-bottom: 10px; font-weight: lighter">My Appointments</h4><table style="width: 100%;" class="table full-width"><tr><th>First Name</th><th>Last Name</th><th>Email</th><th>Service</th></tr>`;
+                    for (let appointment of data) {
+                      tableString += `<tr><td>${appointment.firstName}</td><td>${appointment.lastName}</td><td>${appointment.email}</td><td>${appointment.service}</td></tr>`;
+                    }
+  
+                    tableString += `</table>`;
+
+                    document.getElementById('appointments').innerHTML = tableString;
+                  });
         }
-        tableString += `</table>`;
-        document.getElementById('appointments').innerHTML = tableString;
-      });
-      };
 </script>
 
-</body>
-</html>
+<!-- Calling the footer -->
+<%- include('./partials/_footer.ejs') %>
 
 
 

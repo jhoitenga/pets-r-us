@@ -152,19 +152,19 @@ app.post('/booking', async (req, res, next) => {
     res.render('my-appointments', {
         title: 'Pets-R-Us: My Appointments',
         message: 'Appointment Lookup'
-    })
-  })
+    });
+  });
 
   
-  app.get("/api/appointments/:email", async (req, res, next) => {
-    try {
-      console.log("Verify request is received:", req.params.email);
-      const appointments = await Appointment.find({ 'email': req.params.email }).exec();
-      res.json(appointments);
-    } catch (err) {
-      console.log(err);
-      next(err);
-    }
+  app.get('/api/appointments/:email', async(req, res, next) => {
+    Appointment.find({'email': req.params.email}, function(err, appointments) {
+        if (err) {
+            console.log(err);
+            next(err);
+        } else {
+            res.json(appointments);
+        }
+    });
   });
   
 app.listen(PORT, () => {
