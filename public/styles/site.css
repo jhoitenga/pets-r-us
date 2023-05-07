@@ -334,7 +334,7 @@
   .appt-card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 50%;
+    width: 70%;
     border: #555;
     padding: 10px;
     margin: auto;
@@ -544,4 +544,8 @@
 
 .service {
   font-size: 1.5vw;
+}
+
+.appt-view {
+  text-align: left;
 }

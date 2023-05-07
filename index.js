@@ -157,17 +157,20 @@ app.post('/booking', async (req, res, next) => {
   });
 
   
-  app.get('/api/appointments/:email', async(req, res, next) => {
-    Appointment.find({'email': req.params.email}, function(err, appointments) {
-        if (err) {
-            console.log(err);
-            next(err);
-        } else {
-            res.json(appointments);
-        }
-    });
-  });
 
+
+
+  app.get('/api/appointments/:email', async (req, res, next) => {
+    try {
+      const appointments = await Appointment.find({ email: req.params.email });
+      res.json(appointments);
+    } catch (err) {
+      console.log(err);
+      next(err);
+    }
+  });
+  
+  
 
 
   app.use((req, res, next) => {

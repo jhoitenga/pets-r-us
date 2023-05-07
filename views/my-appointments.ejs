@@ -35,28 +35,20 @@
         <hr> 
         <br>
       </div>
-  
+
       <div class="appt-card">
           <p>Please type in your email address to view your upcoming appointments:</p>
-          <br>
-          <form>
-            <label for="email">Email Address: </label>
-            <input type="email" id="email" name="email" autofocus required>
-            <br>
-            <br>
-            <input type="submit" value="SEARCH" id="search">
-
-            <a href="/" class="btnCancel">CANCEL</a>
-          </form>
-
+          <label for="lastName">Email Address:</label><br />
+          <input type="text" class="input" name="email" id="email" required>
+          
+          <div class="form-field">
+            <input type="submit" value="Search" id="search" class="btn btn-primary full-width">
+          </div>
+          
           <div id="appointments"></div>
-          
-          
         </div>
 
-          <br>
-      
-      
+        <br>
           <p class="motto">There is no limit to what we will do for pets because we know that pets will do anything for us too!</p>
 
 
@@ -67,7 +59,7 @@
                   .then(res => res.json())
                   //.then(text => console.log(text))
                   .then(data => {
-                    let tableString = `<br><h4 style="font-size: 32px; text-align: center; padding-bottom: 10px; font-weight: lighter">My Appointments</h4><table style="width: 100%;" class="table full-width"><tr><th>First Name</th><th>Last Name</th><th>Email</th><th>Service</th></tr>`;
+                    let tableString = `<br><h4 style="font-size: 32px; text-align: center; padding-bottom: 10px; font-weight: lighter">My Appointments</h4><table style="width: 100%;"><tr class="appt-view"><th>First Name</th><th>Last Name</th><th>Email</th><th>Service</th></tr>`;
                     for (let appointment of data) {
                       tableString += `<tr><td>${appointment.firstName}</td><td>${appointment.lastName}</td><td>${appointment.email}</td><td>${appointment.service}</td></tr>`;
                     }
