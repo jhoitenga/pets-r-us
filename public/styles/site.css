@@ -550,3 +550,9 @@
 .appt-view {
   text-align: left;
 }
+
+@media only screen and (min-width: 1200px) {
+  .logo3{
+      padding-top: 160px;
+  }
+}
