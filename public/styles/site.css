@@ -28,6 +28,30 @@
     min-height: 100vh;
   }
 
+  .boarding-hero {
+    background-image: url("/images/boarding.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+  }
+
+  .grooming-hero {
+    background-image: url("/images/grooming.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+  }
+
+  .training-hero {
+    background-image: url("/images/dog_train.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+  }
+
   .grooming-image {
     background-image: url("/images/grooming.jpg");
     height: 850px;
