@@ -552,7 +552,13 @@
 }
 
 @media only screen and (min-width: 1200px) {
+  .logo2{
+      padding-top: 80px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
   .logo3{
-      padding-top: 160px;
+      padding-top: 60px;
   }
 }
